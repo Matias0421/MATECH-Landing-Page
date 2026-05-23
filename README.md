@@ -57,4 +57,4 @@ Para utilizar el formulario de contacto:<br>
 ### Autor:<br>
 
 ## Desarrollado por Matias Ezequiel Deiriz.<br>
-## ENLACE PUBLICO: https://matech-landing-page-19w7kz8rg-matias-deiriz-s-projects.vercel.app?_vercel_share=L6A8n6ZrsiiXH2kwoAriZbTdMM9NYOwA
+## ENLACE PUBLICO:<br> https://matech-landing-page-19w7kz8rg-matias-deiriz-s-projects.vercel.app?_vercel_share=L6A8n6ZrsiiXH2kwoAriZbTdMM9NYOwA<br>https://matech-landing-page.vercel.app/
