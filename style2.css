@@ -1619,7 +1619,7 @@ ul li a:hover::after{
    MÓVIL (max-width: 500px)
 ========================= */
 
-@media (max-width: 600px){
+@media (max-width: 500px){
 
     .barra-navegacion{
         height: 70px;
