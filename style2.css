@@ -1481,6 +1481,18 @@ ul li a:hover::after{
     }
 }
 
+.glow1{
+    background:#e8b15f;
+    top:-100px;
+    left:-100px;
+}
+
+.glow2{
+    background:#6a5cff;
+    right:-100px;
+    bottom:-100px;
+}
+
 /* TABLET */
 @media (max-width: 768px){
 
