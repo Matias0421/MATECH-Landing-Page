@@ -11,7 +11,7 @@ html{
     scroll-behavior: smooth;
 }
 
-body{
+/*body{
     background:
     linear-gradient(
         135deg,
@@ -20,18 +20,118 @@ body{
     );
 
     overflow-x: hidden;
+}*/
+
+body{
+    background: linear-gradient(135deg, #021530, #0b2545, #134074);
+    color: #f8fafc;
+    overflow-x: hidden;
 }
 
-.container{
+/* =========================
+   BRILLOS DE FONDO (GLOW EFFECT)
+========================= */
+
+.fondo-brillo {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(200px);
+    opacity: 0.9;
+    z-index: -1;
+    pointer-events: none;
+    animation: brillo-flotante 8s ease-in-out infinite;
+}
+
+.brillo1 {
+    background: radial-gradient(circle, #e8b15f, transparent);
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    animation-delay: 0s;
+}
+
+.brillo2 {
+    background: radial-gradient(circle, #6a5cff, transparent);
+    right: -100px;
+    bottom: -100px;
+    width: 400px;
+    height: 400px;
+    animation-delay: 2s;
+}
+
+/* Animación suave para los brillos */
+@keyframes brillo-flotante {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(20px, 20px) scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.3;
+    }
+}
+
+/* Responsive para brillos */
+@media (max-width: 768px) {
+    .fondo-brillo {
+        width: 200px;
+        height: 200px;
+        filter: blur(60px);
+        opacity: 0.3;
+    }
+    
+    .brillo1 {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .brillo2 {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 500px) {
+    .fondo-brillo {
+        width: 150px;
+        height: 150px;
+        filter: blur(50px);
+        opacity: 0.25;
+    }
+    
+    .brillo1 {
+        width: 180px;
+        height: 180px;
+        top: -50px;
+        left: -50px;
+    }
+    
+    .brillo2 {
+        width: 200px;
+        height: 200px;
+        right: -50px;
+        bottom: -50px;
+    }
+}
+
+
+.contenedor{
     min-height: 100vh;
     width: 100%;
 }
 
 /* =========================
-   NAVBAR
+   BARRA DE NAVEGACIÓN
 ========================= */
 
-.navbar{
+.barra-navegacion{
     height: 75px;
     width: 100%;
 
@@ -68,11 +168,11 @@ body{
     width: auto;
     display: block;
 
-    animation: desplazarizq 2s ease-out;
+    animation: desplazar-izquierda 2s ease-out;
 }
 
 /* =========================
-   MENU
+   MENÚ
 ========================= */
 
 ul li{
@@ -119,34 +219,34 @@ ul li a:hover::after{
    ICONOS
 ========================= */
 
-.icons{
+.iconos{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
 
-.icons .icon i{
-    animation: desplazarder 2s ease-out;
+.iconos .icono i{
+    animation: desplazar-derecha 2s ease-out;
 }
 
-.icon i{
+.icono i{
     font-size: 22px;
     cursor: pointer;
 
     transition: all 0.35s ease;
 }
 
-.icon i:hover{
+.icono i:hover{
     color: #20ad96;
     transform: translateY(-3px);
 }
 
 /* =========================
-   SEARCH BAR
+   BARRA DE BÚSQUEDA
 ========================= */
 
-.search_bar{
+.barra-busqueda{
     height: 40px;
 
     display: flex;
@@ -161,10 +261,10 @@ ul li a:hover::after{
 
     background: rgba(255,255,255,0.7);
 
-    animation: desplazarder 2s ease-out;
+    animation: desplazar-derecha 2s ease-out;
 }
 
-.search_bar input{
+.barra-busqueda input{
     width: 130px;
 
     border: none;
@@ -173,7 +273,7 @@ ul li a:hover::after{
     background-color: transparent;
 }
 
-.search_bar i{
+.barra-busqueda i{
     padding: 11px;
 
     background-color: #20ad96;
@@ -189,15 +289,15 @@ ul li a:hover::after{
     transition: all 0.35s ease;
 }
 
-.search_bar i:hover{
+.barra-busqueda i:hover{
     background-color: #3f3a64;
 }
 
 /* =========================
-   MENU MOBILE
+   MENÚ MÓVIL
 ========================= */
 
-.navbar .fa-bars{
+.barra-navegacion .fa-bars{
     padding: 12px;
 
     background-color: #20ad96;
@@ -212,10 +312,10 @@ ul li a:hover::after{
 }
 
 /* =========================
-   HERO SECTION
+   SECCIÓN HERO
 ========================= */
 
-.content_wrepper{
+.envoltorio-contenido{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -223,15 +323,15 @@ ul li a:hover::after{
     padding: 70px 5%;
 }
 
-.content_wrepper .content button{
-    animation: desplazarcsom 2s ease-out;
+.envoltorio-contenido .contenido button{
+    animation: desplazar-suave 2s ease-out;
 }
 
 /* =========================
    CONTENIDO
 ========================= */
 
-.content{
+.contenido{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -243,14 +343,16 @@ ul li a:hover::after{
     gap: 25px;
 }
 
-.content h1{
+.contenido h1{
     font-size: 55px;
     line-height: 65px;
-
-    color: #474364;
+    background: linear-gradient(135deg, #6d698d,#3a2da1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-.content span{
+.contenido span{
     font-size: 20px;
     color: grey;
 
@@ -258,10 +360,10 @@ ul li a:hover::after{
 }
 
 /* =========================
-   BOTON HERO
+   BOTÓN HERO
 ========================= */
 
-.content button{
+.contenido button{
     height: 48px;
     width: 220px;
 
@@ -289,7 +391,7 @@ ul li a:hover::after{
     0 10px 25px rgba(32,173,150,0.25);
 }
 
-.content button:hover{
+.contenido button:hover{
     transform: translateY(-5px);
 
     box-shadow:
@@ -307,12 +409,12 @@ ul li a:hover::after{
    LINK CONTACTO
 ========================= */
 
-.content p{
+.contenido p{
     width: 280px;
     overflow: hidden;
 }
 
-.content p a{
+.contenido p a{
     color: #20ad96;
     text-decoration: none;
     font-size: 17px;
@@ -320,7 +422,7 @@ ul li a:hover::after{
     position: relative;
 }
 
-.content p a::after{
+.contenido p a::after{
     content: "";
 
     position: absolute;
@@ -336,11 +438,11 @@ ul li a:hover::after{
     transition: all 0.5s ease-in-out;
 }
 
-.content p a:hover::after{
+.contenido p a:hover::after{
     left: 100%;
 }
 
-.content p a::before{
+.contenido p a::before{
     content: "";
 
     position: absolute;
@@ -357,7 +459,7 @@ ul li a:hover::after{
     transition-delay: .3s;
 }
 
-.content p a:hover::before{
+.contenido p a:hover::before{
     width: 100%;
 }
 
@@ -365,11 +467,11 @@ ul li a:hover::after{
    IMAGEN HERO
 ========================= */
 
-.content_image{
+.imagen-contenido{
     position: relative;
 }
 
-.content_image::before{
+.imagen-contenido::before{
     content: "";
 
     position: absolute;
@@ -396,7 +498,7 @@ ul li a:hover::after{
     filter: blur(50px);
 }
 
-.content_image .main_img{
+.imagen-contenido .imagen-principal{
     margin-top: 0px;
 
     padding: 50px 10px 8%;
@@ -405,7 +507,7 @@ ul li a:hover::after{
 
     z-index: 2;
 
-    animation: scale 5s;
+    animation: escala 5s;
 
     filter:
     drop-shadow(
@@ -414,20 +516,20 @@ ul li a:hover::after{
 }
 
 /* =========================
-   SHAPES
+   FORMAS
 ========================= */
 
-.shape1,
-.shape3{
-    animation: rotate 6s infinite linear;
+.forma1,
+.forma3{
+    animation: rotar 6s infinite linear;
 }
 
-.shape2,
-.shape4{
-    animation: rotate 8s infinite linear;
+.forma2,
+.forma4{
+    animation: rotar 8s infinite linear;
 }
 
-.shape1{
+.forma1{
     position: absolute;
 
     left: 15px;
@@ -439,7 +541,7 @@ ul li a:hover::after{
     z-index: -1;
 }
 
-.shape2{
+.forma2{
     position: absolute;
 
     left: 5px;
@@ -453,7 +555,7 @@ ul li a:hover::after{
     z-index: -1;
 }
 
-.shape3{
+.forma3{
     position: absolute;
 
     right: 0;
@@ -463,7 +565,7 @@ ul li a:hover::after{
     height: 10vw;
 }
 
-.shape4{
+.forma4{
     position: absolute;
 
     right: 0;
@@ -473,7 +575,7 @@ ul li a:hover::after{
     height: 10vw;
 }
 
-.shapes{
+.formas{
     position: absolute;
 
     width: 50px;
@@ -490,8 +592,8 @@ ul li a:hover::after{
 /* =========================
    CLIENTES
 ========================= */
-
-.client_wrapper{
+/*
+.contenedor-clientes{
     background-color: #0f172a;
     width: 100%;
     border-radius: 50px 50px 0px 0px;
@@ -506,11 +608,11 @@ ul li a:hover::after{
     overflow-x: auto;
 }
 
-.client_wrapper::-webkit-scrollbar{
+.contenedor-clientes::-webkit-scrollbar{
     display: none;
 }
 
-.client_wrapper img{
+.contenedor-clientes img{
     height: 60px;
     width: auto;
 
@@ -519,17 +621,56 @@ ul li a:hover::after{
     transition: all 0.35s ease;
 }
 
-.client_wrapper img:hover{
+.contenedor-clientes img:hover{
     opacity: 1;
 
     transform: scale(1.08);
+}*/
+
+/* =========================
+   CONTENEDOR DE CLIENTES
+========================= */
+
+.contenedor-clientes{
+    background: rgba(2, 34, 77, 0.7);
+    backdrop-filter: blur(12px);
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-clientes::-webkit-scrollbar{
+    display: none;
+}
+
+.contenedor-clientes img{
+    height: 60px;
+    width: auto;
+    opacity: 0.7;
+    transition: all 0.35s ease;
+    filter: drop-shadow(0 0 5px rgba(32, 173, 150, 0.2));
+}
+
+.contenedor-clientes img:hover{
+    opacity: 1;
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 15px rgba(32, 173, 150, 0.5));
 }
 
 /* =========================
    ANIMACIONES
 ========================= */
 
-@keyframes desplazarcsom{
+@keyframes desplazar-suave{
 
     0%{
         transform: translateX(-100%);
@@ -545,7 +686,7 @@ ul li a:hover::after{
     }
 }
 
-@keyframes desplazarizq{
+@keyframes desplazar-izquierda{
 
     0%{
         transform: translateX(-100%);
@@ -558,7 +699,7 @@ ul li a:hover::after{
     }
 }
 
-@keyframes desplazarder{
+@keyframes desplazar-derecha{
 
     0%{
         transform: translateX(100%);
@@ -571,7 +712,7 @@ ul li a:hover::after{
     }
 }
 
-@keyframes scale{
+@keyframes escala{
 
     0%{
         transform: scale(.5);
@@ -584,7 +725,7 @@ ul li a:hover::after{
     }
 }
 
-@keyframes rotate{
+@keyframes rotar{
 
     0%{
         transform: rotate(0deg) scale(1);
@@ -599,8 +740,237 @@ ul li a:hover::after{
     }
 }
 
-/*OBEJTIVO*/
-.Conocenos{
+/* =========================
+   ESTILO GLASSMORPHISM (Base general)
+========================= */
+
+.conocenos, .servicios, .trabajos{
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+/* =========================
+   OBJETIVO (Color: Cyan #00bfff)
+========================= */
+
+.objetivo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 850px;
+    padding: 45px;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.objetivo:hover{
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 191, 255, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 191, 255, 0.15);
+}
+
+.objetivo h2{
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.objetivo h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #00bfff;
+    border-radius: 4px;
+}
+
+.objetivo p{
+    font-size: 16px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    text-align: left;
+}
+
+.objetivo strong{
+    color: #00bfff;
+}
+
+/* =========================
+   SERVICIOS (Color: Verde #00ff55)
+======================= */
+
+.descripciones{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 850px;
+    padding: 45px;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.descripciones:hover{
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 255, 85, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 255, 85, 0.15);
+}
+
+.descripciones h2{
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.descripciones h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #00ff55;
+    border-radius: 4px;
+}
+
+.descripciones p{
+    font-size: 16px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    text-align: left;
+}
+
+.descripciones strong{
+    color: #00ff55;
+}
+
+
+.descripciones ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 40px;
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.descripciones ul li{
+    list-style: none;
+}
+
+.descripciones ul li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.descripciones ul li i{
+    font-size: 18px;
+    color: #00ff55;
+    transition: 0.3s ease;
+}
+
+.descripciones ul li a:hover{
+    color: #00ff55;
+    transform: translateX(5px);
+}
+
+.descripciones ul li a:hover i{
+    color: #ffffff;
+}
+
+/* =========================
+   TRABAJOS (Color: Rojo #ff0000)
+========================= */
+
+.descripcion{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 850px;
+    padding: 45px;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.descripcion:hover{
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(255, 0, 0, 0.15);
+}
+
+.descripcion h2{
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.descripcion h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #ff0000;
+    border-radius: 4px;
+}
+
+.descripcion p{
+    font-size: 16px;
+    line-height: 1.7;
+    color: #cbd5e1;
+    text-align: left;
+}
+
+.descripcion strong{
+    color: #ff0000;
+}
+
+/* =========================
+   OBJETIVO
+========================= */
+/*
+.conocenos{
     display: flex;
     justify-content: center;
     padding: 80px 20px;
@@ -665,22 +1035,11 @@ ul li a:hover::after{
 .objetivo strong{
     color: rgb(0, 0, 0);
 }
-
-@media (max-width: 900px){
-
-    .objetivo{
-        width: 100%;
-        padding: 30px;
-    }
-
-    .objetivo h2{
-        font-size: 1.8rem;
-    }
-
-}
-/*OBJETIVO*/
-
-/*SERVICIOS*/
+*/
+/* =========================
+   SERVICIOS
+========================= */
+/*
 .servicios{
     display: flex;
     justify-content: center;
@@ -692,7 +1051,6 @@ ul li a:hover::after{
     flex-direction: column;
     align-items: flex-start;
     width: 50%;
-    /*max-width: 700px;*/
 
     padding: 40px;
     gap: 25px;
@@ -783,22 +1141,11 @@ ul li a:hover::after{
     color: #20ad96;
     transition: 0.3s;
 }
-
-@media (max-width: 900px){
-
-    .descripciones{
-        width: 100%;
-        padding: 30px;
-    }
-
-    .descripciones h2{
-        font-size: 1.8rem;
-    }
-
-}
-/*SERVICIOS*/
-
-/*TRABAJOS*/
+*/
+/* =========================
+   TRABAJOS
+========================= */
+/*
 .trabajos{
     display: flex;
     justify-content: center;
@@ -822,7 +1169,7 @@ ul li a:hover::after{
 
     backdrop-filter: blur(10px);
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
 
     transition: 0.3s ease;
 }
@@ -863,26 +1210,15 @@ ul li a:hover::after{
 
 .descripcion strong{
     color: rgb(0, 0, 0);
-}
+}*/
 
-@media (max-width: 900px){
+/* =========================
+   LÍNEA DIVISORIA
+========================= */
 
-    .descripcion{
-        width: 100%;
-        padding: 30px;
-    }
-
-    .descripcion h2{
-        font-size: 1.8rem;
-    }
-
-}
-/*TRABAJOS*/
-
-/*LINEA DIVISORIA*/
-.linea_divisoria{
-    width: 100%;
-    height: 4px;
+.linea-divisoria{
+    width: 85%;
+    height: 2px;
 
     background: linear-gradient(
         90deg,
@@ -894,15 +1230,18 @@ ul li a:hover::after{
     );
 
     box-shadow:
-        0 0 5px #00ffff,
-        0 0 10px #00ffff,
-        0 0 20px #0066ff;
+        0 0 4px #00ffff,
+        0 0 8px #0066ff;
 
-    margin: 40px 0;
+    margin: 50px auto;
+
+    opacity: 0.7;
 }
-/*LINEA DIVISORIA*/
 
-/*CONTACTANOS*/
+/* =========================
+   CONTÁCTANOS
+========================= */
+
 .contactanos{
     display: flex;
     justify-content: center;
@@ -913,7 +1252,7 @@ ul li a:hover::after{
 }
 
 /* PANEL IZQUIERDO */
-.desc{
+.descripcion-contacto{
     position: relative;
 
     display: flex;
@@ -939,7 +1278,7 @@ ul li a:hover::after{
     transition: 0.3s ease;
 }
 
-.desc:hover{
+.descripcion-contacto:hover{
     transform: translateY(-15px);
 
     box-shadow:
@@ -1004,7 +1343,7 @@ ul li a:hover::after{
     transform: scale(1.02);
 }
 
-/* BOTON ENVIAR */
+/* BOTÓN ENVIAR */
 .mensaje button{
     padding: 15px;
 
@@ -1033,7 +1372,7 @@ ul li a:hover::after{
         0 10px 25px rgba(0,255,255,0.5);
 }
 
-/* BOTON WHATSAPP */
+/* BOTÓN WHATSAPP */
 .btn-wsp{
     text-decoration: none;
 
@@ -1076,10 +1415,9 @@ ul li a:hover::after{
         0 10px 30px rgba(0,0,0,0.2);
 }
 
-/*SECCIONES*/
-.info-servicio{
-    display: none;
-}
+/* =========================
+   SECCIONES DE SERVICIOS
+========================= */
 
 .info-servicio{
     min-height: 100vh;
@@ -1130,10 +1468,10 @@ ul li a:hover::after{
 
 .info-imagen img{
     width: 450px;
-    animation: float 4s ease-in-out infinite;
+    animation: flotar 4s ease-in-out infinite;
 }
 
-.tag{
+.etiqueta{
     display: inline-block;
 
     background: rgba(32,173,150,.15);
@@ -1170,7 +1508,7 @@ ul li a:hover::after{
     transform: translateY(-5px);
 }
 
-@keyframes float{
+@keyframes flotar{
 
     0%{
         transform: translateY(0);
@@ -1183,10 +1521,181 @@ ul li a:hover::after{
     100%{
         transform: translateY(0);
     }
-
 }
-/*SECCIONES*/
 
+/* =========================
+   ÍNDICE
+========================= */
+
+.indice{
+    width: 100%;
+    background: rgba(2, 34, 77, 0.7);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 50px 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.indice h3{
+    font-size: 28px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ffffff, #20ad96);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.indice ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.indice ul li a{
+    background: rgba(255, 255, 255, 0.06);
+    padding: 12px 24px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+}
+
+.indice ul li a i{
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.indice ul li a:hover{
+    background: rgba(32, 173, 150, 0.2);
+    color: #20ad96;
+    transform: translateY(-3px);
+    border-color: rgba(32, 173, 150, 0.4);
+    box-shadow: 0 5px 15px rgba(32, 173, 150, 0.15);
+}
+
+.indice ul li a:hover i{
+    color: #20ad96;
+    transform: scale(1.1);
+}
+
+.indice img{
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(32, 173, 150, 0.3));
+    transition: 0.3s ease;
+}
+
+.indice img:hover{
+    filter: drop-shadow(0 0 15px rgba(32, 173, 150, 0.5));
+    transform: scale(1.05);
+}
+
+/* Responsive para el índice *//*
+@media (max-width: 900px){
+    .indice{
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+        border-radius: 30px;
+        margin: 20px 0;
+    }
+    
+    .indice ul{
+        justify-content: center;
+    }
+    
+    .indice ul li a{
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px){
+    .indice ul{
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .indice ul li a{
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .indice h3{
+        font-size: 24px;
+    }
+    
+    .indice img{
+        width: 50px;
+        height: 50px;
+    }
+}*/
+
+/*
+.indice{
+    width: 100%;
+    background: rgba(15, 23, 42, 0.4);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0;
+}
+
+.indice h3{
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.indice ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.indice ul li a{
+    background: transparent;
+    padding: 0;
+    font-size: 15px;
+    color: #94a3b8;
+}
+
+.indice ul li a:hover{
+    color: #20ad96;
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+.indice img{
+    width: 60px;
+    height: 60px;
+}*/
+/*
 .indice{
     width: 100%;
 
@@ -1269,21 +1778,21 @@ ul li a:hover::after{
     object-fit: contain;
 
     filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
-}
+}*/
 
 /* =========================
-   RESPONSIVE DESIGN
+   DISEÑO RESPONSIVE
 ========================= */
 
 @media screen and (max-width: 1200px){
 
-    .navbar{
+    .barra-navegacion{
         position: relative;
         overflow: visible;
     }
 
-    /* BOTON HAMBURGUESA */
-    .navbar .fa-bars{
+    /* BOTÓN HAMBURGUESA */
+    .barra-navegacion .fa-bars{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1297,8 +1806,8 @@ ul li a:hover::after{
         z-index: 1001;
     }
 
-    /* MENU MOBILE */
-    .navbar ul{
+    /* MENÚ MÓVIL */
+    .barra-navegacion ul{
         position: absolute;
 
         top: 75px;
@@ -1321,12 +1830,12 @@ ul li a:hover::after{
         padding: 0;
     }
 
-    /* MENU ABIERTO */
-    .navbar ul.show{
+    /* MENÚ ABIERTO */
+    .barra-navegacion ul.mostrar{
         max-height: 500px;
     }
 
-    .navbar ul li{
+    .barra-navegacion ul li{
         display: block;
 
         width: 100%;
@@ -1338,7 +1847,7 @@ ul li a:hover::after{
         margin: 0;
     }
 
-    .navbar ul li a{
+    .barra-navegacion ul li a{
         display: block;
         width: 100%;
 
@@ -1346,12 +1855,12 @@ ul li a:hover::after{
         font-size: 18px;
     }
 
-    /* ICONOS MOBILE */
-    #icons{
+    /* ICONOS MÓVIL */
+    #iconos{
         display: none;
     }
 
-    #nav_icons{
+    #iconos-nav{
         display: flex !important;
         flex-direction: column;
         align-items: flex-start;
@@ -1360,21 +1869,21 @@ ul li a:hover::after{
         padding: 20px 0;
     }
 
-    .search_bar{
+    .barra-busqueda{
         width: 100%;
     }
 
-    .search_bar input{
+    .barra-busqueda input{
         width: 100%;
         color: white;
     }
 
-    .content_wrepper{
+    .envoltorio-contenido{
         flex-direction: column-reverse;
         gap: 50px;
     }
 
-    .content{
+    .contenido{
         width: 100%;
         text-align: center;
         align-items: center;
@@ -1382,33 +1891,33 @@ ul li a:hover::after{
         margin-bottom: 40px;
     }
 
-    .content h1{
+    .contenido h1{
         font-size: 45px;
         line-height: 55px;
     }
 
-    .content span{
+    .contenido span{
         font-size: 18px;
     }
 
     /* IMAGEN HERO */
-    .content_image{
+    .imagen-contenido{
         width: 100%;
         display: flex;
         justify-content: center;
     }
 
-    .content_image .main_img{
+    .imagen-contenido .imagen-principal{
         width: 80%;
         max-width: 400px;
         height: auto;
     }
 
-    /* SHAPES */
-    .shape1,
-    .shape2,
-    .shape3,
-    .shape4{
+    /* FORMAS */
+    .forma1,
+    .forma2,
+    .forma3,
+    .forma4{
         width: 80px;
         height: 80px;
     }
@@ -1417,7 +1926,7 @@ ul li a:hover::after{
     .objetivo,
     .descripciones,
     .descripcion,
-    .desc{
+    .descripcion-contacto{
         width: 100%;
     }
 
@@ -1460,7 +1969,7 @@ ul li a:hover::after{
         height: auto;
     }
 
-    /* INDICE */
+    /* ÍNDICE */
     .indice{
         border-radius: 20px;
         padding: 30px 20px;
@@ -1481,62 +1990,101 @@ ul li a:hover::after{
     }
 }
 
-.glow1{
+.brillo1{
     background:#e8b15f;
     top:-100px;
     left:-100px;
 }
 
-.glow2{
+.brillo2{
     background:#6a5cff;
     right:-100px;
     bottom:-100px;
 }
 
-/* TABLET */
+/* =========================
+   TABLET (max-width: 768px)
+========================= */
+
 @media (max-width: 768px){
 
     .logo img{
         height: 45px;
     }
 
-    .content h1{
+    .contenido h1{
         font-size: 38px;
         line-height: 48px;
     }
 
-    .content span{
+    .contenido span{
         font-size: 17px;
         line-height: 30px;
     }
 
-    .content button{
+    .contenido button{
         width: 100%;
         max-width: 280px;
     }
 
-    .shape1,
-    .shape2,
-    .shape3,
-    .shape4{
+    .forma1,
+    .forma2,
+    .forma3,
+    .forma4{
         width: 60px;
         height: 60px;
     }
 
-    .client_wrapper{
-        gap: 60px;
-        padding: 30px;
+    /* ===== CLIENTES - TABLET ===== */
+    .contenedor-clientes{
+        gap: 40px;
+        padding: 30px 5%;
     }
 
-    .client_wrapper img{
+    .contenedor-clientes img{
         height: 45px;
+    }
+
+    /* ===== ÍNDICE - TABLET ===== */
+    .indice{
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 5%;
+        gap: 25px;
+        margin: 15px 0;
+    }
+    
+    .indice h3{
+        font-size: 24px;
+    }
+    
+    .indice ul{
+        justify-content: center;
+        gap: 12px;
+    }
+    
+    .indice ul li a{
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .indice ul li a i{
+        font-size: 14px;
+    }
+    
+    .indice img{
+        width: 55px;
+        height: 55px;
     }
 }
 
-/* MOBILE */
+/* =========================
+   MÓVIL (max-width: 500px)
+========================= */
+
 @media (max-width: 500px){
 
-    .navbar{
+    .barra-navegacion{
         height: 70px;
     }
 
@@ -1544,21 +2092,21 @@ ul li a:hover::after{
         height: 35px;
     }
 
-    .content{
+    .contenido{
         gap: 18px;
     }
 
-    .content h1{
+    .contenido h1{
         font-size: 30px;
         line-height: 40px;
     }
 
-    .content span{
+    .contenido span{
         font-size: 15px;
         line-height: 26px;
     }
 
-    .content button{
+    .contenido button{
         height: 45px;
         width: 160px;
         font-size: 14px;
@@ -1578,57 +2126,25 @@ ul li a:hover::after{
         font-size: 15px;
     }
 
-    .objetivo img,
-    .descripciones img,
-    .descripcion img,
-    .info-texto img{
-        width: 5%;
-        height: 5%;
-    }
-
-    .objetivo ul li,
-    .descripciones ul li,
-    .descripcion ul li,
-    .info-texto ul li{
-        font-size: 14px;
-    }
-
-    .objetivo .btn-servicio,
-    .descripciones .btn-servicio,
-    .descripcion .btn-servicio,
-    .info-texto .btn-servicio{
-        padding: 12px 25px;
-        font-size: 14px;
-    }
-
     .descripciones ul{
         grid-template-columns: 1fr;
     }
 
-    .indice h3{
-        font-size: 26px;
-    }
-
-    .indice ul li a{
-        font-size: 16px;
-        padding: 14px;
-    }
-
-    .shape1,
-    .shape2,
-    .shape3,
-    .shape4{
+    .forma1,
+    .forma2,
+    .forma3,
+    .forma4{
         width: 100px;
         height: 100px;
         position: relative;
     }
 
-    .shape1{
+    .forma1{
         top: 10%;
         left: 5%;
     }
 
-    .shape2{
+    .forma2{
         top: 1%;
         bottom: 0%;
         left: 10%;
@@ -1636,26 +2152,58 @@ ul li a:hover::after{
         z-index: -1;
     }
 
-    .shape3{
+    .forma3{
         top: 65%;
         right: 0%;
         left: 70%;
     }
 
-    .shape4{
+    .forma4{
         top: 10%;
         right: 5%;
     }
 
-    .client_wrapper{
-        border-radius: 20px 20px 0px 0px;
-        gap: 40px;
-        padding: 20px;
+    /* ===== CLIENTES - MÓVIL ===== */
+    .contenedor-clientes{
+        gap: 25px;
+        padding: 20px 5%;
     }
 
-    .client_wrapper img{
-        height: 25px;
+    .contenedor-clientes img{
+        height: 30px;
     }
 
-
+    /* ===== ÍNDICE - MÓVIL ===== */
+    .indice{
+        padding: 30px 5%;
+        gap: 20px;
+        margin: 10px 0;
+    }
+    
+    .indice h3{
+        font-size: 22px;
+    }
+    
+    .indice ul{
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .indice ul li a{
+        justify-content: center;
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    .indice ul li a i{
+        font-size: 16px;
+    }
+    
+    .indice img{
+        width: 45px;
+        height: 45px;
+    }
 }
+

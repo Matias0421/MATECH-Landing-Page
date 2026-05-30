@@ -3,47 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MATECH</title>
+    <title>MATECH - Soluciones Informáticas</title>
     <link rel="stylesheet" href="style2.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- FontAwesome versión corregida -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-    <div class="background-glow glow1"></div>
-    <div class="background-glow glow2"></div>
+    <div class="fondo-brillo brillo1"></div>
+    <div class="fondo-brillo brillo2"></div>
 
-    <div class="container">
+    <div class="contenedor">
 
-        <div class="navbar">
+        <div class="barra-navegacion">
              <div class="logo">
-                <a href="#inicio"><img src="Imagenes/1777237597078.png" alt=""></a>
+                <a href="#inicio"><img src="Imagenes/1777237597078.png" alt="Logo MATECH"></a>
              </div>
              <ul id="menu">
                     <li data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500"><a href="#inicio">Inicio&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
                     <li data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000"><a href="#contacto">Contáctanos&nbsp;</a></li>
                     <li>
-                        <div class="icons" style="display: none;"id="nav_icons">
-                                <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
-                                <div class="search_bar">
-                                    <input type="text" placeholder="search..">
+                        <div class="iconos" style="display: none;" id="iconos-nav">
+                                <div class="icono"><i class="fa-solid fa-circle-user"></i></div>
+                                <div class="barra-busqueda">
+                                    <input type="text" placeholder="buscar..">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
                         </div>
                     </li>
             </ul>
-            <div class="icons" id="icons">
-                    <div class="icon"><i class="fa-solid fa-circle-user"></i></div>
-                    <div class="search_bar">
-                        <input type="text" placeholder="search..">
+            <div class="iconos" id="iconos">
+                    <div class="icono"><i class="fa-solid fa-circle-user"></i></div>
+                    <div class="barra-busqueda">
+                        <input type="text" placeholder="buscar..">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
             </div>
             <i class="fa-solid fa-bars"></i>
         </div>
 
-        <div class="content_wrepper" id="inicio">
-            <div class="content">
+        <div class="envoltorio-contenido" id="inicio">
+            <div class="contenido">
                 <h1 data-aos="zoom-out-right" data-aos-duration="2000"> 
                     MATECH: Soluciones Informáticas
                 </h1>
@@ -57,19 +58,19 @@
                 </a>
                 <p data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-duration="2000">Una Pregunta? <a href="#contacto">Contactanos&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a></p>
             </div>
-            <div class="content_image">
-                <img src="Imagenes/tttt.png" alt="" class="main_img">
-                <img src="Imagenes/sdsad-removebg-preview.png" alt="" style="position: absolute;" class="shape shape1">
-                <img src="Imagenes/Gemini_Generated_Image_s8sfyos8sfyos8sf (1) (1).png" alt="" style="position: absolute;" class="shape shape2">
-                <img src="Imagenes/abstract-polygonal-technology-network-background-with-connecting-dots-vector-illustration.png" alt="" style="position: absolute;" class="shape shape3">
-                <img src="Imagenes/tt-removebg-preview.png" alt="" style="position: absolute;" class="shape shape4">
-                <div class="shapes"></div>
+            <div class="imagen-contenido">
+                <img src="Imagenes/tttt.png" alt="Imagen principal" class="imagen-principal">
+                <img src="Imagenes/sdsad-removebg-preview.png" alt="Forma 1" style="position: absolute;" class="forma forma1">
+                <img src="Imagenes/Gemini_Generated_Image_s8sfyos8sfyos8sf (1) (1).png" alt="Forma 2" style="position: absolute;" class="forma forma2">
+                <img src="Imagenes/abstract-polygonal-technology-network-background-with-connecting-dots-vector-illustration.png" alt="Forma 3" style="position: absolute;" class="forma forma3">
+                <img src="Imagenes/tt-removebg-preview.png" alt="Forma 4" style="position: absolute;" class="forma forma4">
+                <div class="formas"></div>
             </div>
         </div>
 
-        <div class="linea_divisoria"></div>
+        <div class="linea-divisoria"></div>
 
-        <div class="Conocenos" id="objetivo">
+        <div class="conocenos" id="objetivo">
             <div class="objetivo">
                 <h2>OBJETIVO</h2>
                 <p>Nuestro objetivo es ofrecer un servicio confiable, rápido y personalizado para mantener tus dispositivos funcionando de la mejor manera.</p>
@@ -77,7 +78,7 @@
             </div>
         </div>
 
-        <div class="servicios">
+        <div class="servicios" id="servicios">
             <div class="descripciones">
                 <h2>SERVICIOS</h2>
                 <p>En <strong>MATECH</strong>, nos enorgullece compartir algunas de las tareas que hemos realizado para nuestros clientes:</p>
@@ -99,274 +100,197 @@
                     </li>
                 </ul>
             </div>
-
         </div>
 
-        <div class="trabajos">
+        <div class="trabajos" id="trabajos">
             <div class="descripcion">
                 <h2>TRABAJOS REALIZADOS</h2>
                 <p>En <strong>MATECH</strong>, nos enorgullece compartir algunos de los trabajos que hemos realizado para nuestros clientes. Desde la reparación de hardware hasta la optimización de software, cada proyecto refleja nuestro compromiso con la excelencia y la satisfacción del cliente.</p>
             </div>
             <div class="fotos">
-                
+                <!-- Aquí puedes agregar imágenes de trabajos realizados -->
             </div>
-
         </div>
 
-        <div class="linea_divisoria"></div>
+        <div class="linea-divisoria"></div>
 
         <section class="info-servicio" id="hardware">
-
             <div class="info-texto">
-
-                <span class="tag">
+                <span class="etiqueta">
                     <i class="fa-solid fa-microchip"></i>
                     Hardware
                 </span>
-
                 <h2>Reparación de Hardware</h2>
-
                 <p>
                     Diagnosticamos y solucionamos fallas físicas
                     en notebooks, PCs y dispositivos electrónicos.
                 </p>
-
                 <ul>
-
-                    <li><i class="fa-solid fa-check"></i>Cambio de discos SSD y HDD</li>
-                    <li><i class="fa-solid fa-check"></i>Reparación de pantallas</li>
-                    <li><i class="fa-solid fa-check"></i>Limpieza interna y mantenimiento</li>
-                    <li><i class="fa-solid fa-check"></i>Upgrade de memoria RAM</li>
-
+                    <li><i class="fa-solid fa-check"></i> Cambio de discos SSD y HDD</li>
+                    <li><i class="fa-solid fa-check"></i> Reparación de pantallas</li>
+                    <li><i class="fa-solid fa-check"></i> Limpieza interna y mantenimiento</li>
+                    <li><i class="fa-solid fa-check"></i> Upgrade de memoria RAM</li>
                 </ul>
-
                 <a href="#contacto" class="btn-servicio">
                     Solicitar Servicio
                 </a>
-
             </div>
-
             <div class="info-imagen">
-
                 <img src="Imagenes/hardw.png" alt="Hardware">
-
             </div>
-
         </section>
 
-        <!-- SOFTWARE -->
-
         <section class="info-servicio" id="software">
-
             <div class="info-texto">
-
-                <span class="tag">
+                <span class="etiqueta">
                     <i class="fa-solid fa-code"></i>
                     Software
                 </span>
-
                 <h2>Optimización de Software</h2>
-
                 <p>
                     Mejoramos el rendimiento de tus dispositivos
                     eliminando errores, archivos innecesarios y
                     configuraciones que afectan la velocidad.
                 </p>
-
                 <ul>
-
-                    <li><i class="fa-solid fa-check"></i>Optimización de Windows</li>
-                    <li><i class="fa-solid fa-check"></i>Eliminación de virus y malware</li>
-                    <li><i class="fa-solid fa-check"></i>Actualización de drivers</li>
-                    <li><i class="fa-solid fa-check"></i>Mejora del rendimiento general</li>
-
+                    <li><i class="fa-solid fa-check"></i> Optimización de Windows</li>
+                    <li><i class="fa-solid fa-check"></i> Eliminación de virus y malware</li>
+                    <li><i class="fa-solid fa-check"></i> Actualización de drivers</li>
+                    <li><i class="fa-solid fa-check"></i> Mejora del rendimiento general</li>
                 </ul>
-
                 <a href="#contacto" class="btn-servicio">
                     Solicitar Servicio
                 </a>
-
             </div>
-
             <div class="info-imagen">
-
                 <img src="Imagenes/soft.gif" alt="Software">
-
             </div>
-
         </section>
 
-        <!-- INSTALACION -->
-
         <section class="info-servicio" id="instalacion">
-
             <div class="info-texto">
-
-                <span class="tag">
+                <span class="etiqueta">
                     <i class="fa-solid fa-download"></i>
                     Instalación
                 </span>
-
                 <h2>Instalación de Software</h2>
-
                 <p>
                     Instalamos sistemas operativos, programas
                     esenciales y herramientas de productividad
                     para que trabajes sin problemas.
                 </p>
-
                 <ul>
-
-                    <li><i class="fa-solid fa-check"></i>Instalación de Windows</li>
-                    <li><i class="fa-solid fa-check"></i>Paquete Office</li>
-                    <li><i class="fa-solid fa-check"></i>Drivers y utilidades</li>
-                    <li><i class="fa-solid fa-check"></i>Software de seguridad</li>
-
+                    <li><i class="fa-solid fa-check"></i> Instalación de Windows</li>
+                    <li><i class="fa-solid fa-check"></i> Paquete Office</li>
+                    <li><i class="fa-solid fa-check"></i> Drivers y utilidades</li>
+                    <li><i class="fa-solid fa-check"></i> Software de seguridad</li>
                 </ul>
-
                 <a href="#contacto" class="btn-servicio">
                     Solicitar Servicio
                 </a>
-
             </div>
-
             <div class="info-imagen">
-
                 <img src="Imagenes/instal.jpg" alt="Instalación">
-
             </div>
-
         </section>
 
-        <!-- ASESORAMIENTO -->
-
         <section class="info-servicio" id="asesoramiento">
-
             <div class="info-texto">
-
-                <span class="tag">
+                <span class="etiqueta">
                     <i class="fa-solid fa-headset"></i>
                     Asesoramiento
                 </span>
-
                 <h2>Asesoramiento Técnico</h2>
-
                 <p>
                     Brindamos orientación personalizada para ayudarte
                     a tomar las mejores decisiones tecnológicas
                     según tus necesidades.
                 </p>
-
                 <ul>
-
-                    <li><i class="fa-solid fa-check"></i>Recomendación de equipos</li>
-                    <li><i class="fa-solid fa-check"></i>Actualización de hardware</li>
-                    <li><i class="fa-solid fa-check"></i>Soluciones empresariales</li>
-                    <li><i class="fa-solid fa-check"></i>Asistencia personalizada</li>
-
+                    <li><i class="fa-solid fa-check"></i> Recomendación de equipos</li>
+                    <li><i class="fa-solid fa-check"></i> Actualización de hardware</li>
+                    <li><i class="fa-solid fa-check"></i> Soluciones empresariales</li>
+                    <li><i class="fa-solid fa-check"></i> Asistencia personalizada</li>
                 </ul>
-
                 <a href="#contacto" class="btn-servicio">
                     Solicitar Servicio
                 </a>
-
             </div>
-
             <div class="info-imagen">
-
                 <img src="Imagenes/asesor.jpg" alt="Asesoramiento">
-
             </div>
-
         </section>
 
-        <!-- RECUPERACION -->
-
         <section class="info-servicio" id="recuperacion">
-
             <div class="info-texto">
-
-                <span class="tag">
+                <span class="etiqueta">
                     <i class="fa-solid fa-database"></i>
                     Recuperación
                 </span>
-
                 <h2>Recuperación de Datos</h2>
-
                 <p>
                     Recuperamos archivos importantes desde discos
                     dañados, memorias corruptas o sistemas con fallas.
                 </p>
-
                 <ul>
-
-                    <li><i class="fa-solid fa-check"></i>Recuperación de discos dañados</li>
-                    <li><i class="fa-solid fa-check"></i>Restauración de archivos</li>
-                    <li><i class="fa-solid fa-check"></i>Backup seguro</li>
-                    <li><i class="fa-solid fa-check"></i>Recuperación desde pendrives</li>
-
+                    <li><i class="fa-solid fa-check"></i> Recuperación de discos dañados</li>
+                    <li><i class="fa-solid fa-check"></i> Restauración de archivos</li>
+                    <li><i class="fa-solid fa-check"></i> Backup seguro</li>
+                    <li><i class="fa-solid fa-check"></i> Recuperación desde pendrives</li>
                 </ul>
-
                 <a href="#contacto" class="btn-servicio">
                     Solicitar Servicio
                 </a>
-
             </div>
-
             <div class="info-imagen">
-
                 <img src="Imagenes/recuperacion.jpg" alt="Recuperación">
-
             </div>
-
         </section>
 
-        <div class="linea_divisoria"></div>
+        <div class="linea-divisoria"></div>
 
-                <div class="contactanos" id="contacto">
-            
-            <div class="desc">
+        <div class="contactanos" id="contacto">
+            <div class="descripcion-contacto">
                 <h2>CONTACTANOS</h2>
-
                 <p>
                     Si tienes alguna pregunta o necesitas asistencia técnica,
                     no dudes en contactarnos. Estamos aquí para ayudarte
                     a resolver cualquier problema relacionado con tus dispositivos
                     y ofrecerte soluciones personalizadas.
                 </p>
-                <img src="Imagenes/1000036352.jpg" alt="">
-
+                <img src="Imagenes/1000036352.jpg" alt="Contacto">
             </div>
 
             <form class="mensaje" id="formulario">
-
                 <input 
                     type="text"
+                    id="nombre"
                     name="nombre"
                     placeholder="Nombre"
                     required
                 >
-
                 <input 
                     type="email"
+                    id="correo"
                     name="correo"
                     placeholder="Correo Electrónico"
                     required
                 >
-
-                <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-
+                <textarea 
+                    id="texto"
+                    name="mensaje" 
+                    placeholder="Mensaje" 
+                    required
+                ></textarea>
                 <button type="submit">Enviar&nbsp;&nbsp;<i class="fa-solid fa-paper-plane"></i></button>
-
                 <a href="https://wa.me/5491123880942" target="_blank" class="btn-wsp">WhatsApp</a>
-
             </form>
         </div>
 
-        <div class="linea_divisoria"></div>
+        <div class="linea-divisoria"></div>
 
         <div class="indice">
-            <h3>Indice</h3>
+            <h3>Índice</h3>
             <ul>
                 <li><a href="#inicio"><i class="fa-regular fa-house"></i>&nbsp;&nbsp;&nbsp;Inicio</a></li>
                 <li><a href="#objetivo"><i class="fa-solid fa-medal"></i>&nbsp;&nbsp;&nbsp;Objetivo</a></li>
@@ -374,86 +298,55 @@
                 <li><a href="#trabajos"><i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;&nbsp;Trabajos Realizados</a></li>
                 <li><a href="#contacto"><i class="fa-solid fa-headset"></i>&nbsp;&nbsp;&nbsp;Contacto</a></li>
             </ul>
-            <img src="Imagenes/logo-iso2x.png" alt="">
+            <img src="Imagenes/logo-iso2x.png" alt="Logo MATECH">
         </div>
 
-        <div class="client_wrapper">
-            <a href="https://www.dell.com/support/home/es-ar?msockid=1795aa42cd4f63e2265fbeb9cc926200" target="_blank"><img src="Imagenes/logo-dell-2.png"></a>
-            <a href="https://www.intel.la/content/www/xl/es/homepage.html" target="_blank"><img src="Imagenes/231.png"></a>
-            <a href="https://www.msi.com/index.php" target="_blank"><img src="Imagenes/logo-pbm.png"></a>
-            <a href="https://www.apple.com/" target="_blank"><img src="Imagenes/Captura de pantalla 2026-04-19 173009.png"></a>
-            <a href="https://www.amd.com/en.html" target="_blank"><img src="Imagenes/Captura de pantalla 2026-04-19 172953.png"></a>
+        <div class="contenedor-clientes">
+            <a href="https://www.dell.com/support/home/es-ar?msockid=1795aa42cd4f63e2265fbeb9cc926200" target="_blank"><img src="Imagenes/logo-dell-2.png" alt="Dell"></a>
+            <a href="https://www.intel.la/content/www/xl/es/homepage.html" target="_blank"><img src="Imagenes/231.png" alt="Intel"></a>
+            <a href="https://www.msi.com/index.php" target="_blank"><img src="Imagenes/logo-pbm.png" alt="MSI"></a>
+            <a href="https://www.apple.com/" target="_blank"><img src="Imagenes/Captura de pantalla 2026-04-19 173009.png" alt="Apple"></a>
+            <a href="https://www.amd.com/en.html" target="_blank"><img src="Imagenes/Captura de pantalla 2026-04-19 172953.png" alt="AMD"></a>
         </div>
     </div>
 
-    <!--PARTE JAVASCRIPT-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        let menu= document.querySelector("#menu")
-        let bars= document.querySelector(".navbar .fa-bars")
+        // Menú mobile
+        let menu = document.querySelector("#menu");
+        let barras = document.querySelector(".barra-navegacion .fa-bars");
 
-        bars.addEventListener("click", function(){
-            menu.classList.toggle("show")
-        });
+        if (barras) {
+            barras.addEventListener("click", function() {
+                menu.classList.toggle("mostrar");
+            });
+        }
 
         AOS.init();
-
     </script>
 
-    <script>
-        function enviarWhatsApp(e){
-            e.preventDefault();
-
-            let nombre = document.getElementById("nombre").value;
-            let correo = document.getElementById("correo").value;
-            let mensaje = document.getElementById("texto").value;
-
-            let telefono = "5491123880942";
-
-            let texto = `Hola, soy ${nombre}%0A
-            Correo: ${correo}%0A
-            Mensaje: ${mensaje}`;
-
-            let url = `https://wa.me/${telefono}?text=${texto}`;
-
-            window.open(url, "_blank");
-        }
-    </script>
-
+    <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
     <script>
+        emailjs.init("6oYf_k4Fh-XOUJyFG"); // Clave pública
 
-        emailjs.init("6oYf_k4Fh-XOUJyFG");//Calve publica
-
-        document
-        .getElementById("formulario")
-        .addEventListener("submit", function(event){
-
+        document.getElementById("formulario").addEventListener("submit", function(event) {
             event.preventDefault();
 
             emailjs.sendForm(
-                "service_vcagw6z",//id de servicio
-                "template_hjm0ib5",//id de plantilla
+                "service_vcagw6z", // ID de servicio
+                "template_hjm0ib5", // ID de plantilla
                 this
             )
             .then(() => {
-
                 alert("Mensaje enviado correctamente");
-
                 this.reset();
-
             })
             .catch((error) => {
-
-                alert("Error al enviar");
-
+                alert("Error al enviar el mensaje. Intenta nuevamente.");
                 console.log(error);
-
             });
-
         });
-
     </script>
 
 </body>
