@@ -333,9 +333,10 @@ ul li a:hover::after{
 }
 
 .contenido h1{
+    font-family: Inter, sans-serif;
     font-size: 55px;
     line-height: 65px;
-    background: linear-gradient(135deg, #6d698d,#3a2da1);
+    background: linear-gradient(135deg,#3a2da1,  #6d698d);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
